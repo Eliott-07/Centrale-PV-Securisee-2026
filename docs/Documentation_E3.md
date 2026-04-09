@@ -89,3 +89,4 @@ Solution = Ajout du host dans la commande de base :
 pg_restore -U postgres -d django_database_backup --host=localhost ~/backups/backup.dump
 ```
 Résultat la base de donnée est bien copié dans le postgresql.
+
