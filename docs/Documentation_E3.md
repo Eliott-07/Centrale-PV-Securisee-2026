@@ -116,6 +116,7 @@ Après les erreurs réaliser la décision de faire une copie du projet en local 
 Pour sa nous avons utiliser FileZilla qui est un client FTP qui permet de faire la copie de Fichier et Dossier depuis une connexion distante (Serveur etc...)
 
 ![img](image_md/FileZilla.png)
+*FileZilla*
 
 ### 10/04/2026
 #### Mise en place en d'un serveur backup django
@@ -127,3 +128,30 @@ Pour le serveur django utiliser en local la même version Ubuntu que celle utili
 #### Intégration des données
 
 - Regroupement des données récupéré par l'étudiant E1 et E2
+
+### 15/04/2026 - 16/04/2026 
+#### Highcharts en static
+Un autre problème rencontrer est que le site charger des liens CDN (Content Delivery Network) Highcharts qui rapidemet présente des limitations, en effet Highcharts peut bloquer les liens si ces derniers présente une utilisations exéssif (par exemple : trop requette envoyé en rechargeant la page web) ou alors une date d'utilisation dépasser.
+
+![img](image_md/Highcharts_incatif_CDM.png)
+*Comme vous pouvez le voir si dessus highcharts n'autorise pas la connexion a ses liens.*
+
+Pour régler ce problème nous allons mdofier les liens highcharts qui sont en CDM en les méttant en static en installant les fichiers nécessaire depuis leur site. 
+
+Avant nous utilisions 4 liens CDM highcharts : 
+
+![img](image_md/highcharts_CDM_Link.png)
+*Si dessus les liens CDM pour highcharts.js, exporting.js, export-data.js, accessibility.js*
+
+Nous les avons remplacer par des liens qui mène vers des fichiers static :
+
+![img](image_md/highcharts_static_link.png)
+*Si dessus les liens static pour highcharts.js, exporting.js, export-data.js, accessibility.js*
+
+
+
+A faire : Faire une page complete avec toute les données a récolter (Panneaux Photovoltaique : tension, courant  BMS : Tension, Courant)
+
+Changer les fichiers highcharts de la maps ainsi que des autres graphes,
+
+faire les modification pour ajuster mqtt a mon compte hivemq (on oublira websocket pour l'instant) potentiellement faire le décodage directement puis envoyé sur django OU faire le décodage quand la trame arrive sur django.
