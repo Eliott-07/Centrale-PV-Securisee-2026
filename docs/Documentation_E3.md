@@ -140,18 +140,36 @@ Pour régler ce problème nous allons mdofier les liens highcharts qui sont en C
 
 Avant nous utilisions 4 liens CDM highcharts : 
 
+*Si dessous les liens CDM pour highcharts.js, exporting.js, export-data.js, accessibility.js*
 ![img](image_md/highcharts_CDM_Link.png)
-*Si dessus les liens CDM pour highcharts.js, exporting.js, export-data.js, accessibility.js*
+```monProjetDjango/GestionExploitant/templates/dashboard.html```
+
 
 Nous les avons remplacer par des liens qui mène vers des fichiers static :
 
+
+*Si dessous les liens static pour highcharts.js, exporting.js, export-data.js, accessibility.js*
 ![img](image_md/highcharts_static_link.png)
-*Si dessus les liens static pour highcharts.js, exporting.js, export-data.js, accessibility.js*
+```monProjetDjango/GestionExploitant/templates/dashboard.html```
 
 
 
-A faire : Faire une page complete avec toute les données a récolter (Panneaux Photovoltaique : tension, courant  BMS : Tension, Courant)
 
-Changer les fichiers highcharts de la maps ainsi que des autres graphes,
 
-faire les modification pour ajuster mqtt a mon compte hivemq (on oublira websocket pour l'instant) potentiellement faire le décodage directement puis envoyé sur django OU faire le décodage quand la trame arrive sur django.
+### 26/05/2026
+#### Modification code HTML, Models.py, views.py
+ces modifications servent surtout a rajouter les données de la batterie N+0 N+1 N+2 etc... déjà présente dans les models django et la BDD mais qui n'avait pas étais ajouté auparavant.
+
+
+![img](image_md/BUS_CAN_data.png)
+
+*Les différentes donnéees de la batterie (N+0, N+1, N+2 etc...) chaque adresse on leur propre donnée communiqué*
+
+Seule N+0 était déjà présente avec la page grapheDesDonnées j'ai donx récupéré le code base et fais les modification principalement dans la partie script du code afin de l'adapter aux différentes données de la batterie : 
+
+*Si dessous vous avez le script de récupération des donnée de N+0(ainsi que de leur configuration)*
+![img](image_md/Code_html_script.png)
+```monProjetDjango/GestionExploitant/templates/visualisation_graphique.html```
+
+
+
