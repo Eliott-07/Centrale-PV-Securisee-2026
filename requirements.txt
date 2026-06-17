@@ -1,0 +1,4 @@
+python-can==0.0.0
+pandas==2.2.3+dfsg
+Python==3.13.5
+can-utils==2023.03-1+b2
